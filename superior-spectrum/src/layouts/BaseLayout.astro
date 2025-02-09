@@ -1,0 +1,30 @@
+---
+import Header from '@/components/Header.astro';
+import BaseHead from './BaseHead.astro';
+import BaseAnimations from './BaseAnimations.astro';
+import Footer from '@/components/Footer.astro';
+
+import '@fontsource/merriweather';
+// Supports weights 300-800
+import '@fontsource-variable/merriweather-sans';
+---
+
+<!doctype html>
+<html lang='en'>
+  <BaseHead />
+  <body
+    id='body'
+    class='tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor'
+  >
+    <main id='body-inner'>
+      <BaseAnimations />
+      <div id='scroll-container'>
+        <Header />
+        <div id='content-wrap'>
+          <slot />
+          <Footer />
+        </div>
+      </div>
+    </main>
+  </body></html
+>

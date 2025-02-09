@@ -1,0 +1,13 @@
+{
+  // "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "noEmit": true,
+    "checkJs": false,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@ui/*": ["src/components/ui/*"]
+    }
+  }
+}

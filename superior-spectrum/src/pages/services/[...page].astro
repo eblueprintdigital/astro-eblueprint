@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from 'astro';
+import InnerHero from '@/components/InnerHero.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  // data
+  const allServices = await getCollection(
+    'service',
+    ({ data }) => !data.isDraft
+  );
+  return paginate(
+    allServices.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getUTCDate() -
+        new Date(a.data.pubDate).getUTCDate()
+    ),
+    {
+      pageSize: 6,
+    }
+  );
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+// console.log(page);
+---
+
+<BaseLayout>
+  <InnerHero />
+  <div class='tt-section'>
+    <div class='tt-section-inner'>
+      <div id='portfolio-grid' class='pgi-cap-inside pgi-cap-hover'>
+        <div class='tt-grid ttgr-layout-1-2 ttgr-gap-4'>
+          <div class='tt-grid-items-wrap isotope-items-wrap'>
+            {page.data.map((service) => <ServiceCard service={service} />)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

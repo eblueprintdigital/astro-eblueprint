@@ -1,0 +1,20 @@
+---
+import Contact from '@/components/Contact.astro';
+import Hero from '@/components/Hero.astro';
+import LatestWorks from '@/components/LatestWorks.astro';
+import Scroller from '@/components/Scroller.astro';
+import Services from '@/components/Services.astro';
+import Testimonials from '@/components/Testimonials.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <Hero ghost='Creative & Digtial Agency' description='Description'>
+    Welcome to…<br />e-blueprint digital
+  </Hero>
+  <LatestWorks />
+  <Services />
+  <Testimonials />
+  <Scroller />
+  <Contact />
+</BaseLayout>

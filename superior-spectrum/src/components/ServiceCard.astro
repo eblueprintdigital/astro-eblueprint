@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+const { service } = Astro.props;
+console.log(service);
+const { title, description, image } = service.data;
+// console.log(image);
+---
+
+<article class='tt-grid-item isotope-item people'>
+  <div class='ttgr-item-inner'>
+    <div class='portfolio-grid-item'>
+      <a
+        href={`/services/${service.id}/`}
+        class='pgi-image-wrap'
+        data-cursor='View<br>Project'
+      >
+        <div class='pgi-image-holder cover-opacity-2'>
+          <div class='pgi-image-inner anim-zoomin'>
+            <figure class='pgi-image ttgr-height'>
+              <Image src={image} alt={title} />
+              <!-- <img src={image} alt='image' /> -->
+            </figure>
+          </div>
+        </div>
+      </a>
+
+      <div class='pgi-caption'>
+        <div class='pgi-caption-inner'>
+          <h2 class='pgi-title'>{title}</h2>
+          <div class='pgi-categories-wrap'>
+            <!-- <div class='pgi-category'>People</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

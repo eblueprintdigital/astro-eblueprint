@@ -1,0 +1,132 @@
+---
+const { service } = Astro.props;
+const { title, image } = service.data;
+console.log(service);
+---
+
+<div
+  id='page-header'
+  class='ph-full ph-cap-sm ph-center ph-bg-image ph-image-shadow ph-image-cover-6 ph-content-parallax'
+>
+  <div class='page-header-inner tt-wrap max-width-1400'>
+    <!-- Begin page header image 
+							============================= -->
+    <div class='ph-image'>
+      <div class='ph-image-inner'>
+        <img src={image.src} alt='Image' />
+      </div>
+    </div>
+    <!-- End page header image -->
+
+    <!-- Begin page header caption
+							=============================== 
+							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
+							-->
+    <div class='ph-caption'>
+      <div class='ph-categories ph-appear'>
+        <!-- <a href='blog-archive.html' class='ph-category'>Lifestyle</a> -->
+        <!-- <a href="blog-archive.html" class="ph-category">Uncategorized</a> -->
+      </div>
+      <!-- /.ph-categories -->
+
+      <h2 class='ph-caption-title ph-appear'>
+        {title}
+      </h2>
+      <!-- You can use <br class="hide-from-lg"> to break a text line if needed -->
+
+      <!-- <div class='ph-meta ph-appear'>
+        <span class='ph-meta-published'>May 26, 2021</span>
+        <span class='ph-meta-posted-by'
+          >by: <a href='blog-archive.html' title='View all posts by John Doe'
+            >John Doe</a
+          ></span
+        >
+      </div> -->
+      <!-- /.ph-meta -->
+    </div>
+    <!-- End page header caption -->
+  </div>
+  <!-- /.page-header-inner -->
+
+  <!-- Begin scroll down circle (you can change "data-offset" to set scroll top offset) 
+						============================== -->
+  <a href='#page-content' class='scroll-down-circle' data-offset='30'>
+    <div class='sdc-inner ph-appear'>
+      <div class='sdc-icon'><i class='fas fa-chevron-down'></i></div>
+      <svg viewBox='0 0 500 500'>
+        <defs>
+          <path
+            d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250'
+            id='textcircle'></path>
+        </defs>
+        <text dy='30'>
+          <textPath xlink:href='#textcircle'
+            >Scroll down - Scroll down -</textPath
+          >
+        </text>
+      </svg>
+    </div>
+    <!-- /.sdc-inner -->
+  </a>
+  <!-- End scroll down circle -->
+
+  <!-- Begin made with love 
+						========================== -->
+  <div class='made-with-love ph-appear'>
+    <div class='mwl-inner'>
+      <div class='mwl-text'>Made with</div>
+      <div class='mwl-icon'><i class='far fa-heart'></i></div>
+    </div>
+  </div>
+  <!-- End made with love -->
+
+  <!-- Begin page header share (share buttons are for design purposes only!) 
+						============================= -->
+  <div class='ph-share'>
+    <div class='ph-share-trigger ph-appear'>
+      <div class='ph-share-text'>Share</div>
+      <div class='ph-share-icon magnetic-item'
+        ><i class='fas fa-share-alt'></i></div
+      >
+    </div>
+    <!-- /.ph-share-trigger -->
+
+    <div class='ph-share-content'>
+      <div class='ph-share-close cursor-close'><div class='bg-noise'></div></div
+      >
+      <div class='ph-share-inner'>
+        <h1 class='ph-share-title ph-share-appear'>Spread the Word!</h1>
+        <div class='ph-share-subtitle ph-share-appear'
+          >Share this article with your friends</div
+        >
+
+        <div class='social-buttons ph-share-appear'>
+          <ul>
+            <li
+              ><a href='#0' class='magnetic-item' title='Share on Facebook'
+                ><i class='fab fa-facebook-f'></i></a
+              ></li
+            >
+            <li
+              ><a href='#0' class='magnetic-item' title='Share on Twitter'
+                ><i class='fab fa-twitter'></i></a
+              ></li
+            >
+            <li
+              ><a href='#0' class='magnetic-item' title='Share on Pinterest'
+                ><i class='fab fa-pinterest'></i></a
+              ></li
+            >
+          </ul>
+        </div>
+        <!-- /.social-buttons -->
+      </div>
+      <!-- /.ph-share-inner -->
+
+      <div class='ph-share-ghost ph-share-appear'>Share</div>
+    </div>
+    <!-- /.ph-share-content -->
+  </div>
+  <!-- End page header share -->
+</div>
+<!-- End page header -->
