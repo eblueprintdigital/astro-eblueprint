@@ -5,36 +5,17 @@ const allServices = await getCollection('service');
 console.log(allServices);
 ---
 
-<!-- =======================
-						///// Begin tt-section /////
-						============================ 
-						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-						-->
 <div
   class='tt-section padding-bottom-xlg-150 padding-left-sm-3-p padding-right-sm-3-p'
 >
   <div class='tt-section-inner tt-wrap max-width-1100'>
-    <!-- Begin tt-Heading 
-								====================== 
-								* Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
-								* Use class "tt-heading-stroke" to enable stroke style.
-								* Use class "tt-heading-center" to align tt-Heading to center.
-								* Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
-								-->
     <div
       class='tt-heading tt-heading-lg tt-heading-center margin-bottom-15-p anim-fadeinup'
     >
       <h3 class='tt-heading-subtitle text-gray'>What We Do</h3>
       <h2 class='tt-heading-title'>Services</h2>
     </div>
-    <!-- End tt-Heading -->
 
-    <!-- Begin accordion 
-								===================== 
-								* Use class "tt-ac-sm", "tt-ac-lg", "tt-ac-xlg" or "tt-ac-xxlg" to set accordion size.
-								* Use class "tt-ac-borders" to enable borders.
-								* Add class "is-open" to the "tt-accordion-content" to make this content open by default.
-								-->
     <div class='tt-accordion tt-ac-xlg tt-ac-borders'>
       {
         allServices.map((service) => {
@@ -56,7 +37,7 @@ console.log(allServices);
                 <p>{truncatedText}</p>
 
                 <div class='tt-btn tt-btn-link'>
-                  <a href='dummy-page.html' data-hover='Read More'>
+                  <a href={`/services/${service.id}`} data-hover='Read More'>
                     Read More
                   </a>
                 </div>
@@ -66,8 +47,5 @@ console.log(allServices);
         })
       }
     </div>
-    <!-- End accordion -->
   </div>
-  <!-- /.tt-section-inner -->
 </div>
-<!-- End tt-section -->

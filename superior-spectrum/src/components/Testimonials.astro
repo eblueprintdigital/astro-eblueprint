@@ -1,108 +1,34 @@
-<!-- =======================
-						///// Begin tt-section /////
-						============================ 
-						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-						-->
+---
+import { getCollection } from 'astro:content';
+const allTestimonials = await getCollection('testimonial');
+// const { title, description } = allTestimonials[0].data;
+// console.log(allTestimonials[0].data.title);
+---
+
 <div
   class='tt-section padding-top-xlg-150 padding-bottom-xlg-100 padding-left-sm-3-p padding-right-sm-3-p bg-white-accent-3'
 >
   <div class='tt-section-inner'>
-    <!-- Begin testimonials slider 
-								===============================
-								* Use class "text-center" to align text to the center.
-								* Use class "cursor-drag" to enable cursor drag on carousel hover ("data-simulate-touch" attribute must be enabled!).
-								* Use class "ts-hide-pagination" to hide pagination (for desktop only!).
-								* Use class "ts-hide-navigation" to hide navigation arrows.
-								* Use class "ts-full-width" to enable full width slider.
-								* Available data attributes:
-										data-speed="900"......................(milliseconds)
-										data-autoplay="5000"..................(milliseconds. Note: disabled after user first interactions)
-										data-simulate-touch="true"............(true/false)
-										data-loop="true"......................(true/false)
-								-->
     <div
       class='tt-testimonials-slider ts-full-width text-center cursor-drag ts-scale-down ts-hide-navigation anim-fadeinup'
       data-loop='true'
       data-simulate-touch='true'
       data-speed='900'
     >
-      <!-- Begin swiper container -->
       <div class='swiper'>
-        <!-- Begin swiper wrapper (required) -->
         <div class='swiper-wrapper'>
-          <!-- Begin swiper slide 
-											======================== -->
-          <div class='swiper-slide font-alter'>
-            <div class='tt-ts-item'>
-              <div class='tt-ts-text'>
-                "One of the best template I've ever had. I love it! It's fully
-                customizable, well coded, fast and responsive - fitting for all
-                kind of devices."
+          {
+            allTestimonials.map((item) => (
+              <div class='swiper-slide font-alter'>
+                <div class='tt-ts-item'>
+                  <div class='tt-ts-text'>{item.data.description}</div>
+                  <div class='tt-ts-subtext'>{item.data.title}</div>
+                </div>
               </div>
-              <div class='tt-ts-subtext'>- Wironimo</div>
-            </div>
-          </div>
-          <!-- End swiper slide -->
-
-          <!-- Begin swiper slide 
-											======================== -->
-          <div class='swiper-slide font-alter'>
-            <div class='tt-ts-item'>
-              <div class='tt-ts-text'>
-                "Brilliant template. Tons of options, many concepts, design
-                flexibility, code quality, explanatory comments in each section
-                for easy styling."
-              </div>
-              <div class='tt-ts-subtext'>- Gneto</div>
-            </div>
-          </div>
-          <!-- End swiper slide -->
-
-          <!-- Begin swiper slide 
-											======================== -->
-          <div class='swiper-slide font-alter'>
-            <div class='tt-ts-item'>
-              <div class='tt-ts-text'>
-                "Easy to customize, plenty of choices to display your portfolio,
-                fast loading times. Excellent support."
-              </div>
-              <div class='tt-ts-subtext'>- Brendak</div>
-            </div>
-          </div>
-          <!-- End swiper slide -->
-
-          <!-- Begin swiper slide 
-											======================== -->
-          <div class='swiper-slide font-alter'>
-            <div class='tt-ts-item'>
-              <div class='tt-ts-text'>
-                "Very nice design and well organised and commented code. Also
-                good customer service."
-              </div>
-              <div class='tt-ts-subtext'>- Gazzzzz</div>
-            </div>
-          </div>
-          <!-- End swiper slide -->
-
-          <!-- Begin swiper slide 
-											======================== -->
-          <div class='swiper-slide font-alter'>
-            <div class='tt-ts-item'>
-              <div class='tt-ts-text'>
-                "I founded a bug on Iphone and Ipad and the author fixed very
-                quickly. I appreciated his efforts and his quickness in solving
-                the problem."
-              </div>
-              <div class='tt-ts-subtext'>- Admanente</div>
-            </div>
-          </div>
-          <!-- End swiper slide -->
+            ))
+          }
         </div>
-        <!-- End swiper wrapper -->
       </div>
-      <!-- End swiper container -->
-
-      <!-- Testimonials slider navigation (arrows) -->
       <div class='tt-ts-nav-prev'>
         <div class='tt-ts-nav-arrow magnetic-item'></div>
       </div>
@@ -110,11 +36,7 @@
         <div class='tt-ts-nav-arrow magnetic-item'></div>
       </div>
 
-      <!-- Testimonials slider pagination -->
       <div class='tt-ts-pagination hide-cursor'></div>
     </div>
-    <!-- End testimonials slider -->
   </div>
-  <!-- /.tt-section-inner -->
 </div>
-<!-- End tt-section -->

@@ -17,20 +17,16 @@ const service = defineCollection({
     }),
 });
 
-// const testimonial = defineCollection({
-//   loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
-//   schema: ({ image }) =>
-//     z.object({
-//       title: z.string(),
-//       description: z.string(),
-//       image: image(),
-//       // pubDate: z.date(),
-//       // isDraft: z.boolean().optional(),
-//     }),
-// });
+const testimonial = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
 
 export const collections = {
   hero,
   service,
-  // testimonial,
+  testimonial,
 };

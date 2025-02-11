@@ -3,10 +3,9 @@ import type { GetStaticPaths } from 'astro';
 import InnerHero from '@/components/InnerHero.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export const getStaticPaths = (async ({ paginate }) => {
-  // data
   const allServices = await getCollection(
     'service',
     ({ data }) => !data.isDraft
@@ -28,7 +27,13 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout>
-  <InnerHero />
+  <InnerHero
+    title='Services'
+    subTitle='e-blueprint digital'
+    ghostTitle='e-blueprint'
+    image='@/assets/images/jamaica-st-22c'
+    alt='22 jamaica street, liverpool'
+  />
   <div class='tt-section'>
     <div class='tt-section-inner'>
       <div id='portfolio-grid' class='pgi-cap-inside pgi-cap-hover'>
