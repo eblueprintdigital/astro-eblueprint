@@ -1,6 +1,9 @@
 ---
 title: 'Step seven: Mobile friendly website design - A responsive website for all devices'
-image: ./Step-seven-Mobile-friendly-website-design-A-responsive-website-for-all-devices.jpg
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Step-seven-Mobile-friendly-website-design-A-responsive-website-for-all-devices.jpg
 ---
 
 ## ![](images/icon-step7-1.jpg)

@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import type { GetStaticPaths } from 'astro';
+import InnerHero from '@/components/InnerHero.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '@/components/ui/FormattedDate.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allBlogs = await getCollection('blog', ({ data }) => !data.isDraft);
+  return paginate(allBlogs.sort(
+      (a, b) =>
+        new Date(b.data.date).getTime() -
+        new Date(a.data.date).getTime()
+    ), {
+    pageSize: 6
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+// console.log(page.data)
+const { currentPage, lastPage, url } = Astro.props.page;
+
+// Helper function for generating page links
+const getPageLink = (page) => (page === 1 ? `/news` : `/news/${page}`);
+
+---
+
+<BaseLayout>
+  <InnerHero
+    title='News'
+    subTitle='e-blueprint digital'
+    ghostTitle='e-blueprint'
+    image='@/assets/images/jamaica-st-22c'
+    alt='22 jamaica street, liverpool'
+  />
+
+  <div class='tt-section'>
+    <div class='tt-section-inner tt-wrap'>
+      <div class='blog-interactive bi-borders'>
+        {
+          page.data.map((service) => (
+            <article class='blog-interactive-item anim-skewinup'>
+              <a href='blog-post.html' class='bi-item-image'>
+                <Image src={service.data.image} alt={service.data.title} />
+              </a>
+              <div class='bi-item-categories'>
+                <a href='blog-archive.html'>Lifestyle</a>
+              </div>
+              <h2 class='bi-item-title'>
+                <a href={`/news/${service.id}`}>
+                 {service.data.title}
+                </a>
+              </h2>
+              <div class='bi-item-meta'>
+                <span class='published'>
+                  <FormattedDate date={service.data.date} />
+                </span>
+                <span class='posted-by'>
+                  - by{' '}
+                  <a
+                    href='blog-archive.html'
+                    title='View all posts by John Doe'
+                  >
+                    John Doe
+                  </a>
+                </span>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+{lastPage > 1 && (
+  <div class="tt-pagination tt-pagin-center margin-top-xlg-100 anim-fadeinup">
+    <!-- Previous Button -->
+    <div class="tt-pagin-prev">
+      {url.prev && (
+        <a href={url.prev} class="tt-pagin-item magnetic-item">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      )}
+    </div>
+
+    <!-- Page Numbers -->
+    <div class="tt-pagin-numbers">
+      {Array.from({ length: lastPage }, (_, i) => {
+        const pageNum = i + 1;
+        return (
+          <a 
+            href={getPageLink(pageNum)}
+            class={`tt-pagin-item magnetic-item ${currentPage === pageNum ? 'active' : ''}`}
+          >
+            {pageNum}
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Next Button -->
+    <div class="tt-pagin-next">
+      {url.next && (
+        <a href={url.next} class="tt-pagin-item tt-pagin-next magnetic-item">
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      )}
+    </div>
+  </div>
+)}
+
+    </div>
+  </div>
+</BaseLayout>

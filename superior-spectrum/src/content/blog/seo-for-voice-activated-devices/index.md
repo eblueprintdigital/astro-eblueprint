@@ -1,6 +1,9 @@
 ---
 title: 'SEO FOR VOICE ACTIVATED DEVICES'
-image: ./canned-phone-568057_1920-pixabay-800x400-1.jpg
+date: 2017-12-01
+categories:
+  - 'seo'
+image: ./images/canned-phone-568057_1920-pixabay-800x400-1.jpg
 ---
 
 Voice activation is no longer ‘the future’. Voice activated SEO is here, and now, and it works. We have seen voice activation soar in popularity over the last two or three years. Whether it’s through our phones with applications like Siri, or through purpose-built devices like the Amazon Echo or Google Home, voice activation search technologies are fast becoming part of the landscape of everyday modern life. In fact, some studies believe that voice searches will make up 50% of online searches by the time 2020 comes around!

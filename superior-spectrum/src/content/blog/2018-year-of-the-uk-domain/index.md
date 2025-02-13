@@ -1,6 +1,9 @@
 ---
 title: '2018 – YEAR OF THE ‘.UK’ DOMAIN'
-image: ./dot-uk-illustration-yves-small.jpg
+date: 2018-02-04
+categories:
+  - 'hosting'
+image: ./images/dot-uk-illustration-yves-small.jpg
 ---
 
 If you're an internet user, then you will have noticed that the ‘.uk’ domain name has been around for a while now. It was introduced around June 2014 as a compacted replacement for the more common ‘.co.uk’. This abbreviated name quickly became incredibly popular and was widely implemented across well-known websites. When companies like the BBC are moving over to ‘.uk’, you know it’s here to stay! That's why this blog is going to outline the reasons why it's time to grab your ‘.uk’ domain.

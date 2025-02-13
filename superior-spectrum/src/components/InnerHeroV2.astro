@@ -1,6 +1,5 @@
 ---
-const { service } = Astro.props;
-const { title, image } = service.data;
+const { title, image } = Astro.props;
 // console.log(service);
 ---
 
@@ -13,7 +12,7 @@ const { title, image } = service.data;
 							============================= -->
     <div class='ph-image'>
       <div class='ph-image-inner'>
-        <img src={image.src} alt='Image' />
+        <img src={image} alt='Image' />
       </div>
     </div>
     <!-- End page header image -->

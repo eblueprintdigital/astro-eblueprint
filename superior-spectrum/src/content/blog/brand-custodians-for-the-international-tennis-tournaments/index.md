@@ -1,6 +1,9 @@
 ---
 title: 'Branding for The International Tennis Tournaments'
-image: ./BrandCustodians_03.png
+date: 2016-05-18
+categories:
+  - 'ux-design'
+image: ./images/BrandCustodians_03.png
 ---
 
 Protecting your [brand identity](https://ebp-copy.eblue-hosting.co.uk/services/brand-identity/) and reputation is a cornerstone for every business. With our branding experience, we've outlined some key considerations and actions you can use to stave off any unforeseen mishaps. Visit our work with events like [Northern Vision’s International Tennis Tournaments](https://northern-vision.co.uk/events/williams-bmw-liverpool-international/), which has illustrated this effective logo use.

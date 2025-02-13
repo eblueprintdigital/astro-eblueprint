@@ -1,6 +1,9 @@
 ---
 title: 'Choosing The Best Lead Generation For Your Business'
-image: ./carlos-muza-84523-unsplash-800x400-1.jpg
+date: 2018-01-25
+categories:
+  - 'lead-generation'
+image: ./images/carlos-muza-84523-unsplash-800x400-1.jpg
 ---
 
 Finding the right lead generation tool, or indeed the right combination of lead generation tools can be difficult. It is especially difficult when there are so many tools out there with so many applications, algorithms and variations in effect. Where do you start? Well, hopefully, we can give you some ideas here.

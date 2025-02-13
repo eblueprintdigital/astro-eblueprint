@@ -1,6 +1,9 @@
 ---
 title: 'Web content creation template'
-image: ./Screenshot-2021-12-07-at-22.04.49.png
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Screenshot-2021-12-07-at-22.04.49.png
 ---
 
 To get you started, we've developed a web content creation template. Here, we have divided the content you need for a website into seven key areas. They may not reflect everything you do, and you may decide that you don't need all of these pages, but it'll give you a pretty good starting point if you can complete this.

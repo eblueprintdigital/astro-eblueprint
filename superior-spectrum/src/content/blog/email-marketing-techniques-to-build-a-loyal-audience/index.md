@@ -1,6 +1,9 @@
 ---
 title: 'Email marketing techniques to build a loyal audience'
-image: ./EmailBlogHeader.jpg
+date: 2016-09-03
+categories:
+  - 'digital-marketing'
+image: ./images/EmailBlogHeader.jpg
 ---
 
 **Email marketing techniques are often overlooked when it comes to building a loyal audience base. If you already have an email address or business card it stands to reason you have had some contact with that person already and formed a good impression (unless you’ve bought an email list of course… and therefore do not collect £200 and do not pass GO!).**

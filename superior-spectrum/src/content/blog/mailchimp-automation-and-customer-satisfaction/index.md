@@ -1,6 +1,9 @@
 ---
 title: 'Step nine: Mailchimp automation and customer satisfaction'
-image: ./Step-nine-Mailchimp-automation-and-customer-satisfaction.jpg
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Step-nine-Mailchimp-automation-and-customer-satisfaction.jpg
 ---
 
 ## ![](images/icon-step9-1.jpg)**Optimising your digital speed doesn't just mean having a [fast website](https://ebp-copy.eblue-hosting.co.uk/blog/mobile-friendly-website-design-a-responsive-website-for-all-devices/). The more time you save using CRM tools, the more time you have to spend helping your business grow.**

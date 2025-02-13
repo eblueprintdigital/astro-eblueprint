@@ -1,6 +1,9 @@
 ---
 title: 'Step ten: Marketing analytics, measurements and ROI'
-image: ./Step-ten-Marketing-analytics-measurments-and-ROI.jpg
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Step-ten-Marketing-analytics-measurments-and-ROI.jpg
 ---
 
 ## ![](images/icon-step10-1.jpg)**Explore this guide on marketing analytics, measurements, and ROI to strengthen your business.**

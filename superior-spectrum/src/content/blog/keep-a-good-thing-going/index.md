@@ -1,6 +1,9 @@
 ---
 title: 'KEEP A GOOD THING GOING'
-image: ./HomeCollaborativeWorking-800x400-1.jpg
+date: 2020-03-19
+categories:
+  - 'remote-working'
+image: ./images/HomeCollaborativeWorking-800x400-1.jpg
 ---
 
 ## **Working at Home - Gardiner's Guide**

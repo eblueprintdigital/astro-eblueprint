@@ -1,6 +1,9 @@
 ---
 title: 'GDPR IS COMING – WHAT DOES IT MEAN FOR YOU?'
-image: ./matthew-henry-87142-unsplash-800x400-1.jpg
+date: 2018-02-04
+categories:
+  - 'crm'
+image: ./images/matthew-henry-87142-unsplash-800x400-1.jpg
 ---
 
 ## **What is GDPR?**

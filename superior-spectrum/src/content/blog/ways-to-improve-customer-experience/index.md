@@ -1,6 +1,9 @@
 ---
 title: 'Step six: Ways to improve customer experience'
-image: ./Step-six-Ways-to-improve-customer-experience.jpg
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Step-six-Ways-to-improve-customer-experience.jpg
 ---
 
 ## ![](images/icon-step6-1.jpg)

@@ -1,6 +1,9 @@
 ---
 title: 'DOMAINS – WHICH ONES TO BUY'
-image: ./web-design-1327873_1280-pixabay-800x400-1.png
+date: 2018-02-04
+categories:
+  - 'hosting'
+image: ./images/web-design-1327873_1280-pixabay-800x400-1.png
 ---
 
 Domains and the world of commerce online can be a bit of a minefield. Rules, trends and algorithms are always shifting and improving, so it can be really hard to know where to begin. Let’s start with a quick recap!

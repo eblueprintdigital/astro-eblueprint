@@ -17,6 +17,18 @@ const service = defineCollection({
     }),
 });
 
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      // description: z.string(),
+      image: image(),
+      date: z.date(),
+      // isDraft: z.boolean().optional(),
+    }),
+});
+
 const testimonial = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
   schema: z.object({
@@ -29,4 +41,5 @@ export const collections = {
   hero,
   service,
   testimonial,
+  blog,
 };

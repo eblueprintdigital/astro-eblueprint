@@ -1,6 +1,9 @@
 ---
 title: 'Step eight: Customer experience - Audience segmentation in digital marketing'
-image: ./Step-eight-Customer-experience-Audience-segmentation-in-digital-marketing.jpg
+date: 2021-12-07
+categories:
+  - 'digital-marketing'
+image: ./images/Step-eight-Customer-experience-Audience-segmentation-in-digital-marketing.jpg
 ---
 
 ## ![](images/icon-step8-1.jpg)Building a database of customers is great... but it leaves us wondering what can we do with it and what does it mean for our customers?
