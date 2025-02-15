@@ -25,3 +25,40 @@ h4 {
 .grey {
   color: var(--grey);
 }
+
+.tt-btn--custom > *,
+.tt-btn--custom > ::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 30px;
+  line-height: 1;
+
+  position: relative;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.tt-btn--custom {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: transparent;
+  margin: 15px 15px 15px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-weight: 500;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  z-index: 9;
+}
+
+/* .tt-btn--custom:hover > button {
+  transform: translate3d(0px, -100%, 0px);
+} */

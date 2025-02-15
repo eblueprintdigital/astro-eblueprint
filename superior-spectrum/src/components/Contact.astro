@@ -41,23 +41,18 @@ import Socials from './Socials.astro';
       <!-- /.tt-col -->
 
       <div class='tt-col-lg-7'>
-        <form id='tt-contact-form' class='tt-form-minimal anim-fadeinup'>
-          <!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-          <input
+        <form id='tt-contact-form' class='tt-form-minimal'>
+          <!-- <input
             type='hidden'
             name='project_name'
             value='yourwebsiteaddress.com'
           />
-          <!-- Change value to your site name -->
           <input type='hidden' name='admin_email' value='your@email.com' />
-          <!-- Change value to your valid email address (where a message will be sent) -->
           <input
             type='hidden'
             name='form_subject'
             value='Message from yourwebsiteaddress.com'
-          />
-          <!-- Change value to your own message subject -->
-          <!-- End Hidden Required Fields -->
+          /> -->
 
           <div class='tt-row'>
             <div class='tt-col-md-6'>
@@ -65,61 +60,50 @@ import Socials from './Socials.astro';
                 <label>Name <span class='required'>*</span></label>
                 <input
                   class='tt-form-control'
+                  autocomplete='name'
                   type='text'
-                  name='Name'
-                  placeholder=''
+                  name='name'
                   required
                 />
               </div>
             </div>
-            <!-- /.tt-col -->
 
             <div class='tt-col-md-6'>
               <div class='tt-form-group'>
                 <label>Email address <span class='required'>*</span></label>
                 <input
                   class='tt-form-control'
+                  autocomplete='email'
                   type='email'
-                  name='Email'
-                  placeholder=''
+                  name='email'
                   required
                 />
               </div>
             </div>
-            <!-- /.tt-col -->
           </div>
-          <!-- /.tt-row -->
 
           <div class='tt-form-group'>
             <label>Subject <span class='required'>*</span></label>
             <input
               class='tt-form-control'
               type='text'
-              name='Subject'
-              placeholder=''
+              name='subject'
               required
             />
           </div>
 
           <div class='tt-form-group'>
             <label>Message <span class='required'>*</span></label>
-            <textarea
-              class='tt-form-control'
-              rows='6'
-              name='Message'
-              placeholder=''
-              required></textarea>
+            <textarea class='tt-form-control' rows='6' name='message' required>
+            </textarea>
           </div>
 
-          <small class='tt-form-text'
-            ><em>Fields marked with an asterisk (*) are required!</em></small
-          >
-
-          <div class='tt-btn tt-btn-light-outline margin-top-40'>
-            <button type='submit' data-hover='Send Message'>Send Message</button
-            >
+          <div class='tt-btn--custom tt-btn-light-outline margin-top-40'>
+            <button type='submit'>Send Message</button>
           </div>
         </form>
+
+        <p id='form-response'></p>
         <!-- End form -->
       </div>
       <!-- /.tt-col -->
@@ -129,3 +113,52 @@ import Socials from './Socials.astro';
   <!-- /.tt-section-inner -->
 </div>
 <!-- End tt-section -->
+
+<style>
+  form > p {
+    color: #fff;
+  }
+</style>
+
+<script is:inline>
+  // Key change: is:inline or place script at the end of the <body>
+
+  const form = document.getElementById('tt-contact-form');
+  const responseMessage = document.getElementById('form-response');
+
+  form.addEventListener('submit', async (e) => {
+    console.log('Form submit event triggered!'); // Add this line
+
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        responseMessage.textContent = 'Message sent successfully!';
+        responseMessage.style.color = 'white';
+        form.reset();
+      } else {
+        // More robust error handling:
+        const errorMessage =
+          result.error || result.message || 'Something went wrong';
+        responseMessage.textContent = `Error: ${errorMessage}`;
+        responseMessage.style.color = 'white';
+        console.error('API Error:', result); // Log the full error for debugging
+      }
+    } catch (error) {
+      responseMessage.textContent = `Failed to send message. ${error.message}`;
+      responseMessage.style.color = 'white';
+      console.error('Fetch Error:', error); // Log the full error for debugging
+    }
+  });
+</script>
