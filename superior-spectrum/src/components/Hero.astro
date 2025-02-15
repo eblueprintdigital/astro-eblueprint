@@ -1,5 +1,6 @@
 ---
-const { ghost, description } = Astro.props;
+const { ghost, image } = Astro.props;
+import Image from 'astro/components/Image.astro';
 import { getEntry } from 'astro:content';
 const heroDescription = await getEntry('hero', 'hero'); // Collection name, slug
 ---
@@ -13,7 +14,7 @@ const heroDescription = await getEntry('hero', 'hero'); // Collection name, slug
 							============================= -->
     <div class='ph-image'>
       <div class='ph-image-inner'>
-        <img src='assets/img/page-header/ph-6.jpg' alt='Image' />
+        <Image src={image} alt='image' />
       </div>
     </div>
     <!-- End page header image -->
@@ -28,7 +29,7 @@ const heroDescription = await getEntry('hero', 'hero'); // Collection name, slug
       </h1>
 
       <div class='ph-caption-title-ghost ph-appear'>{ghost}</div>
-      <div class='ph-caption-subtitle ph-appear max-width-650'>
+      <div class='ph-caption-subtitle ph-appear max-width-850'>
         <div
           class='ph-subt-parallax'
           set:html={heroDescription.rendered.html}
@@ -77,5 +78,9 @@ const heroDescription = await getEntry('hero', 'hero'); // Collection name, slug
 <style>
   .ph-subt-parallax {
     font-size: 1rem;
+  }
+
+  .ph-image {
+    right: 10vw;
   }
 </style>

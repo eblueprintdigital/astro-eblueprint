@@ -29,3 +29,25 @@ export const navLinks = [
     href: '/contact',
   },
 ];
+
+export const socials = [
+  {
+    title: 'Fb',
+    href: 'https://www.facebook.com/eblueprintltd',
+  },
+
+  {
+    title: 'Tw',
+    href: 'https://twitter.com/eblueprint',
+  },
+
+  {
+    title: 'Ig',
+    href: 'https://www.instagram.com/eblueprint_digital/',
+  },
+
+  {
+    title: 'Li',
+    href: 'https://www.linkedin.com/company/e-blueprint/',
+  },
+];

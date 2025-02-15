@@ -1,0 +1,20 @@
+---
+import { socials } from '../data/siteData';
+---
+
+<ul>
+  {
+    socials.map((social) => (
+      <li>
+        <a
+          href={social.href}
+          class='magnetic-item'
+          target='_blank'
+          rel='noopener'
+        >
+          {social.title}
+        </a>
+      </li>
+    ))
+  }
+</ul>

@@ -1,5 +1,9 @@
 ---
+import Socials from './Socials.astro';
+
 import Scripts from './vendor/Scripts.astro';
+
+// console.log(socials);
 ---
 
 <!-- ======================
@@ -27,12 +31,8 @@ import Scripts from './vendor/Scripts.astro';
     <div class='footer-col tt-align-center order-m-last'>
       <div class='footer-col-inner'>
         <div class='tt-copyright'>
-          © Copyright - <a
-            href='https://themetorium.net'
-            target='_blank'
-            rel='noopener'
-            class='tt-link'>Themetorium.net</a
-          >
+          &copy; <span id='copyright'>{new Date().getFullYear()}</span> Copyright
+          &mdash; e-blueprint digital
         </div>
       </div>
       <!-- /.footer-col-inner -->
@@ -44,52 +44,11 @@ import Scripts from './vendor/Scripts.astro';
     <div class='footer-col tt-align-center-right'>
       <div class='footer-col-inner'>
         <div class='footer-social'>
-          <div class='footer-social-text'
-            ><span>Follow</span><i class='fas fa-share-alt'></i></div
-          >
+          <div class='footer-social-text'>
+            <span>Follow</span><i class='fas fa-share-alt'></i>
+          </div>
           <div class='social-buttons'>
-            <ul>
-              <li
-                ><a
-                  href='https://www.facebook.com/themetorium'
-                  class='magnetic-item'
-                  target='_blank'
-                  rel='noopener'>Fb.</a
-                ></li
-              >
-              <li
-                ><a
-                  href='https://twitter.com/Themetorium'
-                  class='magnetic-item'
-                  target='_blank'
-                  rel='noopener'>Tw.</a
-                ></li
-              >
-              <li
-                ><a
-                  href='https://www.youtube.com/'
-                  class='magnetic-item'
-                  target='_blank'
-                  rel='noopener'>Yt.</a
-                ></li
-              >
-              <li
-                ><a
-                  href='https://dribbble.com/Themetorium'
-                  class='magnetic-item'
-                  target='_blank'
-                  rel='noopener'>Dr.</a
-                ></li
-              >
-              <li
-                ><a
-                  href='https://www.behance.net/Themetorium'
-                  class='magnetic-item'
-                  target='_blank'
-                  rel='noopener'>Be.</a
-                ></li
-              >
-            </ul>
+            <Socials />
           </div>
           <!-- /.social-buttons -->
         </div>
@@ -104,3 +63,8 @@ import Scripts from './vendor/Scripts.astro';
 <!-- End tt-footer -->
 
 <Scripts />
+
+<script>
+  const copyrightSpan = document.querySelector('#copyright');
+  copyrightSpan.textContent = new Date().getFullYear().toString();
+</script>

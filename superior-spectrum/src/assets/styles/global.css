@@ -1,7 +1,27 @@
+:root {
+  --blue: #009ac7;
+  --grey: rgb(167, 167, 167);
+}
+
 li {
   color: #b9b9b9;
 }
 
 strong {
   font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.grey {
+  color: var(--grey);
 }

@@ -5,6 +5,8 @@ import ServiceCard from '@/components/ServiceCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+import image from '@/assets/images/jamaica-st-22c.webp';
+
 export const getStaticPaths = (async ({ paginate }) => {
   const allServices = await getCollection(
     'service',
@@ -31,7 +33,7 @@ const { page } = Astro.props;
     title='Services'
     subTitle='e-blueprint digital'
     ghostTitle='e-blueprint'
-    image='@/assets/images/jamaica-st-22c'
+    image={image}
     alt='22 jamaica street, liverpool'
   />
   <div class='tt-section'>

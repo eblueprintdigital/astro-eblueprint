@@ -1,0 +1,22 @@
+---
+// Layout
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Components
+import InnerHero from '@/components/InnerHero.astro';
+import Contact from '@/components/Contact.astro';
+
+import image from '../assets/images/macbook-with-google.jpg';
+---
+
+<BaseLayout>
+  <InnerHero
+    title='Contact'
+    subTitle='e-blueprint digital'
+    ghostTitle='e-blueprint'
+    image={image}
+    alt='22 jamaica street, liverpool'
+  />
+
+  <Contact />
+</BaseLayout>

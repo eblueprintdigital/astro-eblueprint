@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import headerImage from '@/assets/images/jamaica-st-22c.webp';
+// import headerImage from '@/assets/images/jamaica-st-22c.webp';
 
 const { subTitle, title, ghostTitle, image, alt } = Astro.props;
 ---
@@ -13,12 +13,12 @@ const { subTitle, title, ghostTitle, image, alt } = Astro.props;
     <div class='ph-image'>
       <div class='ph-image-inner'>
         <!-- <img src='assets/img/page-header/ph-4.jpg' alt='Image' /> -->
-        <Image src={headerImage} width='320' height='448' alt={alt} />
+        <Image src={image} format='avif' alt={alt} />
       </div>
     </div>
 
     <div class='ph-caption'>
-      <h1 class='ph-caption-title ph-appear'>{title}</h1>
+      <h1 class='ph-caption-title ph-appear blue'>{title}</h1>
       <div class='ph-caption-title-ghost ph-appear'>{ghostTitle}</div>
       <div class='ph-caption-subtitle ph-appear'>{subTitle}</div>
     </div>

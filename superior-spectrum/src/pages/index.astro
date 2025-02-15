@@ -6,11 +6,19 @@ import Scroller from '@/components/Scroller.astro';
 import Services from '@/components/Services.astro';
 import Testimonials from '@/components/Testimonials.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import heroImage from '../assets/images/digital-marketing.jpg';
 ---
 
 <BaseLayout>
-  <Hero ghost='Creative & Digtial Agency' description='Description'>
-    Welcome to…<br />e-blueprint digital
+  <Hero
+    ghost='Creative & Digtial Agency'
+    description='Description'
+    image={heroImage}
+  >
+    <span class=''>Welcome to…</span>
+    <br />
+    <span class='blue'>e-blueprint digital</span>
   </Hero>
   <LatestWorks
     subTitle='Latest Projects'
@@ -20,6 +28,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   />
   <Services />
   <Testimonials />
-  <Scroller />
+  <Scroller title="Let's create something awesome together! -" />
   <Contact />
 </BaseLayout>
