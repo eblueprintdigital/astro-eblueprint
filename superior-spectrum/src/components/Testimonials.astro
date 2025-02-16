@@ -1,8 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 const allTestimonials = await getCollection('testimonial');
-// const { title, description } = allTestimonials[0].data;
-// console.log(allTestimonials[0].data.title);
+// console.log(allTestimonials);
+const sortedTestimonials = allTestimonials.sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// console.log(sortedTestimonials);
 ---
 
 <div
@@ -18,7 +22,7 @@ const allTestimonials = await getCollection('testimonial');
       <div class='swiper'>
         <div class='swiper-wrapper'>
           {
-            allTestimonials.map((item) => (
+            sortedTestimonials.map((item) => (
               <div class='swiper-slide font-alter'>
                 <div class='tt-ts-item'>
                   <div class='tt-ts-text'>{item.data.description}</div>

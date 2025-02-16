@@ -1,7 +1,13 @@
 ---
+import Image from 'astro/components/Image.astro';
 import { getCollection } from 'astro:content';
 
-const allServices = await getCollection('service', ({ data }) => !data.isDraft);
+const allPortfolio = await getCollection(
+  'portfolio',
+  ({ data }) => !data.isDraft
+);
+
+console.log(allPortfolio);
 
 const { subTitle, title, link, linkText } = Astro.props;
 ---
@@ -22,22 +28,19 @@ const { subTitle, title, link, linkText } = Astro.props;
       <div class='tt-grid ttgr-layout-creative-2 ttgr-not-cropped ttgr-gap-4'>
         <div class='tt-grid-items-wrap isotope-items-wrap'>
           {
-            allServices.map((item) => (
+            allPortfolio.map((item) => (
               <div class='tt-grid-item isotope-item people'>
                 <div class='ttgr-item-inner'>
                   <div class='portfolio-grid-item'>
                     <a
-                      href='single-project-1.html'
+                      href={`/portfolio/${item.id}`}
                       class='pgi-image-wrap'
                       data-cursor='View<br>Project'
                     >
                       <div class='pgi-image-holder cover-opacity-2'>
                         <div class='pgi-image-inner anim-zoomin'>
                           <figure class='pgi-image ttgr-height'>
-                            <img
-                              src='assets/img/portfolio/portfolio-1.jpg'
-                              alt='image'
-                            />
+                            <Image src={item.data.featuredImage} alt='image' />
                           </figure>
                         </div>
                       </div>

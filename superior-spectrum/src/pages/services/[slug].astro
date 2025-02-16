@@ -1,8 +1,15 @@
 ---
-import InnerHeroV2 from '@/components/InnerHeroV2.astro';
+// layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import type { GetStaticPaths } from 'astro';
+
+// components
+import InnerHeroV2 from '@/components/Heros/InnerHeroV2.astro';
+
+// tools
 import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import SocialShare from '@/components/ui/SocialShare.astro';
+
 export const getStaticPaths = (async () => {
   const allServices = await getCollection(
     'service',
@@ -18,82 +25,21 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-const { slug } = Astro.params;
-
 const { service } = Astro.props;
-// console.log(service);
-const { title, description, image } = service.data;
+const { title, image } = service.data;
 
 const { Content } = await render(service);
 ---
 
 <BaseLayout>
-  <InnerHeroV2 service={service} />
+  <InnerHeroV2 title={title} image={image} />
   <div class='tt-section'>
     <div class='tt-section-inner tt-wrap max-width-900'>
       <article class='tt-blog-post lightgallery'>
         <div class='tt-blog-post-content'>
           <Content />
         </div>
-        <div class='tt-blog-post-share'>
-          <div class='tt-bps-text'>Share:</div>
-          <div class='social-buttons'>
-            <ul>
-              <li>
-                <div class='magnetic-wrap'>
-                  <a
-                    href='https://www.facebook.com/sharer/sharer.php?u=https://e-blueprint.co.uk/services/consultancy/'
-                    class='magnetic-item not-hide-cursor'
-                    rel='noopener'
-                    title='Share on Facebook'
-                    target='_blank'
-                  >
-                    <i class='fab fa-facebook-f'></i>
-                  </a></div
-                >
-              </li>
-              <li>
-                <div class='magnetic-wrap'>
-                  <a
-                    href='https://twitter.com/intent/tweet?url=https://e-blueprint.co.uk/services/consultancy/&text=Consultancy'
-                    class='magnetic-item not-hide-cursor'
-                    rel='noopener'
-                    title='Share on Twitter'
-                    target='_blank'
-                  >
-                    <i class='fab fa-twitter'></i>
-                  </a>
-                </div>
-              </li>
-              <li>
-                <div class='magnetic-wrap'>
-                  <a
-                    href='https://www.linkedin.com/shareArticle?mini=true&url=https://e-blueprint.co.uk/services/consultancy/&title=Consultancy'
-                    class='magnetic-item not-hide-cursor'
-                    rel='noopener'
-                    title='Share on LinkedIn'
-                    target='_blank'
-                  >
-                    <i class='fab fa-linkedin-in'></i>
-                  </a>
-                </div>
-              </li>
-              <li>
-                <div class='magnetic-wrap'>
-                  <a
-                    href='https://www.pinterest.com/pin/create/button/?url=https://e-blueprint.co.uk/services/consultancy/&media=https://e-blueprint.co.uk/wp-content/uploads/2020/06/Consultancy3.jpg&description=Consultancy'
-                    class='magnetic-item not-hide-cursor'
-                    rel='noopener'
-                    title='Share on Pinterest'
-                    target='_blank'
-                  >
-                    <i class='fab fa-pinterest'></i>
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <SocialShare />
       </article>
       <div class='tt-blog-post-nav'>
         <div class='tt-bp-nav-col tt-bp-nav-right'>

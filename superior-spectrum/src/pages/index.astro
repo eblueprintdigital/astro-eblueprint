@@ -1,12 +1,14 @@
 ---
+// components
 import Contact from '@/components/Contact.astro';
-import Hero from '@/components/Hero.astro';
-import LatestWorks from '@/components/LatestWorks.astro';
-import Scroller from '@/components/Scroller.astro';
+import Hero from '@/components/Heros/Hero.astro';
+import LatestWorks from '@/components/Home/LatestWorks.astro';
+import Scroller from '@/components/Home/Scroller.astro';
 import Services from '@/components/Services.astro';
 import Testimonials from '@/components/Testimonials.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
+// images
 import heroImage from '../assets/images/digital-marketing.jpg';
 ---
 
@@ -20,14 +22,16 @@ import heroImage from '../assets/images/digital-marketing.jpg';
     <br />
     <span class='blue'>e-blueprint digital</span>
   </Hero>
-  <LatestWorks
-    subTitle='Latest Projects'
-    title='Works'
-    linkText='See All Works'
-    link='/portfolio'
-  />
-  <Services />
-  <Testimonials />
-  <Scroller title="Let's create something awesome together! -" />
-  <Contact />
+  <div id='page-content'>
+    <LatestWorks
+      subTitle='Latest Projects'
+      title='Works'
+      linkText='See All Works'
+      link='/portfolio'
+    />
+    <Services />
+    <Testimonials />
+    <Scroller title="Let's create something awesome together! -" />
+    <Contact />
+  </div>
 </BaseLayout>

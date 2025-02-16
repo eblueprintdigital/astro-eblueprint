@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
     "@astrojs/netlify": "^6.2.0",
     "@fontsource-variable/merriweather-sans": "^5.1.1",
     "@fontsource/merriweather": "^5.1.1",

@@ -2,12 +2,10 @@
 import { Image } from 'astro:assets';
 
 const { service } = Astro.props;
-// console.log(service);
-const { title, description, image } = service.data;
-// console.log(image);
+const { title, image } = service.data;
 ---
 
-<article class='tt-grid-item isotope-item people'>
+<article class='tt-grid-item isotope-item people sg'>
   <div class='ttgr-item-inner'>
     <div class='portfolio-grid-item'>
       <a

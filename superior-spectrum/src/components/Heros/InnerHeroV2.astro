@@ -1,6 +1,10 @@
 ---
+import Image from 'astro/components/Image.astro';
+
 const { title, image } = Astro.props;
 // console.log(service);
+// const { title } = service.data;
+// const { image } = service.data.image;
 ---
 
 <div
@@ -12,7 +16,8 @@ const { title, image } = Astro.props;
 							============================= -->
     <div class='ph-image'>
       <div class='ph-image-inner'>
-        <img src={image} alt='Image' />
+        <Image src={image} alt='hyg' />
+        <!-- <img src={image} alt='Image' /> -->
       </div>
     </div>
     <!-- End page header image -->
@@ -31,24 +36,11 @@ const { title, image } = Astro.props;
       <h2 class='ph-caption-title ph-appear'>
         {title}
       </h2>
-      <!-- You can use <br class="hide-from-lg"> to break a text line if needed -->
-
-      <!-- <div class='ph-meta ph-appear'>
-        <span class='ph-meta-published'>May 26, 2021</span>
-        <span class='ph-meta-posted-by'
-          >by: <a href='blog-archive.html' title='View all posts by John Doe'
-            >John Doe</a
-          ></span
-        >
-      </div> -->
-      <!-- /.ph-meta -->
     </div>
     <!-- End page header caption -->
   </div>
   <!-- /.page-header-inner -->
 
-  <!-- Begin scroll down circle (you can change "data-offset" to set scroll top offset) 
-						============================== -->
   <a href='#page-content' class='scroll-down-circle' data-offset='30'>
     <div class='sdc-inner ph-appear'>
       <div class='sdc-icon'><i class='fas fa-chevron-down'></i></div>

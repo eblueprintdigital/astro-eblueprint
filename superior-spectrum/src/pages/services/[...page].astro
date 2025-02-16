@@ -1,10 +1,16 @@
 ---
-import type { GetStaticPaths } from 'astro';
-import InnerHero from '@/components/InnerHero.astro';
-import ServiceCard from '@/components/ServiceCard.astro';
+// layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 
+// components
+import InnerHero from '@/components/Heros/InnerHero.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+
+// tools
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+// assets
 import image from '@/assets/images/jamaica-st-22c.webp';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -25,7 +31,6 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-// console.log(page);
 ---
 
 <BaseLayout>

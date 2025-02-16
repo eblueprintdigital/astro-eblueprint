@@ -4,11 +4,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 // Components
 import DraggableSlider from '@/components/DraggableSlider.astro';
-import InnerHero from '@/components/InnerHero.astro';
-import NextPage from '@/components/NextPage.astro';
+import InnerHero from '@/components/Heros/InnerHero.astro';
+import NextPage from '@/components/ui/NextPage.astro';
 import Services from '@/components/Services.astro';
 import Testimonials from '@/components/Testimonials.astro';
-import TextBlock from '@/components/TextBlock.astro';
+import TextBlock from '@/components/ui/TextBlock.astro';
 
 // Images
 import branding from '../assets/images/branding.jpg';
@@ -17,8 +17,6 @@ import digitalMarketing from '../assets/images/digital-marketing.jpg';
 import eCommerce from '../assets/images/e-commerce.jpg';
 import uxAnalytics from '../assets/images/ux-analytics.jpg';
 import webDevelopment from '../assets/images/web-development.jpg';
-// import nextPageImage from '../assets/images/branding-identity.jpg';
-
 import image from '../assets/images/jamaica-st-22c.webp';
 
 const images = [
@@ -39,24 +37,26 @@ const images = [
     image={image}
     alt='22 jamaica street, liverpool'
   />
-  <TextBlock title='The Story'>
-    <p class='anim-fadeinup'>
-      Operating as an all-service agency, our marketing team are partners with
-      Google, Mailchimp, and Trustpilot. We also work with specialist agencies
-      to ensure that your messaging and marketing stays true to your campaign
-      and brand.
-    </p>
+  <div id='page-content'>
+    <TextBlock title='The Story'>
+      <p class='anim-fadeinup'>
+        Operating as an all-service agency, our marketing team are partners with
+        Google, Mailchimp, and Trustpilot. We also work with specialist agencies
+        to ensure that your messaging and marketing stays true to your campaign
+        and brand.
+      </p>
 
-    <p class='anim-fadeinup'>
-      The websites that we develop act as the central hub for all your online
-      activity and will consider every aspect of marketing and customer
-      interaction. We bring you the benefits of an integrated, true e-business
-      that reduces administrative overhead, automates tasks and integrates with
-      your back-office systems.
-    </p>
-  </TextBlock>
-  <DraggableSlider images={images} />
-  <Services />
-  <Testimonials />
-  <NextPage title='Services' link='/services' subTitle='' image={branding} />
+      <p class='anim-fadeinup'>
+        The websites that we develop act as the central hub for all your online
+        activity and will consider every aspect of marketing and customer
+        interaction. We bring you the benefits of an integrated, true e-business
+        that reduces administrative overhead, automates tasks and integrates
+        with your back-office systems.
+      </p>
+    </TextBlock>
+    <DraggableSlider images={images} />
+    <Services />
+    <Testimonials />
+    <NextPage title='Services' link='/services' subTitle='' image={branding} />
+  </div>
 </BaseLayout>

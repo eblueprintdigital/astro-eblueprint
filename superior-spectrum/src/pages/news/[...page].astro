@@ -1,10 +1,19 @@
 ---
+// tools
 import { Image } from 'astro:assets';
 import type { GetStaticPaths } from 'astro';
-import InnerHero from '@/components/InnerHero.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+
+// components
+import InnerHero from '@/components/Heros/InnerHero.astro';
 import FormattedDate from '@/components/ui/FormattedDate.astro';
+
+// layouts
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// assets
+import image from '@/assets/images/macbook-with-google.jpg';
+
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allBlogs = await getCollection('blog', ({ data }) => !data.isDraft);
@@ -18,7 +27,6 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-// console.log(page.data)
 const { currentPage, lastPage, url } = Astro.props.page;
 
 // Helper function for generating page links
@@ -31,7 +39,7 @@ const getPageLink = (page) => (page === 1 ? `/news` : `/news/${page}`);
     title='News'
     subTitle='e-blueprint digital'
     ghostTitle='e-blueprint'
-    image='@/assets/images/jamaica-st-22c'
+    image={image}
     alt='22 jamaica street, liverpool'
   />
 
