@@ -12,5 +12,16 @@ import robots from 'astro-robots';
 // https://astro.build/config
 export default defineConfig({
   adapter: netlify(),
-  integrations: [mdx(), partytown(), robots()],
+  integrations: [
+    mdx(),
+    partytown(),
+    robots({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '/',
+        },
+      ],
+    }),
+  ],
 });
