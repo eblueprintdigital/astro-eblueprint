@@ -15,6 +15,7 @@
     "@fontsource-variable/merriweather-sans": "^5.1.1",
     "@fontsource/merriweather": "^5.1.1",
     "astro": "^5.2.5",
+    "astro-robots": "^2.3.1",
     "gsap": "^3.12.7",
     "nodemailer": "^6.10.0"
   }

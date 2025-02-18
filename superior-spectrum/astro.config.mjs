@@ -7,8 +7,10 @@ import mdx from '@astrojs/mdx';
 
 import partytown from '@astrojs/partytown';
 
+import robots from 'astro-robots';
+
 // https://astro.build/config
 export default defineConfig({
   adapter: netlify(),
-  integrations: [mdx(), partytown()],
+  integrations: [mdx(), partytown(), robots()],
 });
