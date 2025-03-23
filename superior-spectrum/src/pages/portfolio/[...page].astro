@@ -1,0 +1,47 @@
+---
+import InnerHero from '@/components/Heros/InnerHero.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// tools
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+//assets
+import image from '@/assets/images/portfolio.webp';
+import LatestWorks from '@/components/Home/LatestWorks.astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPortfolios = await getCollection(
+    'portfolio',
+    ({ data }) => !data.isDraft
+  );
+  return paginate(
+    allPortfolios.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getUTCDate() -
+        new Date(a.data.pubDate).getUTCDate()
+    ),
+    {
+      pageSize: 6,
+    }
+  );
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BaseLayout>
+  <InnerHero
+    title='Portfolio'
+    subTitle='A collection of work'
+    ghostTitle='Portfolio'
+    image={image}
+    alt='22 jamaica street, liverpool'
+  />
+  <LatestWorks
+    subTitle='Latest Projects'
+    title='Works'
+    linkText='See All Works'
+    link='/portfolio'
+  />
+</BaseLayout>

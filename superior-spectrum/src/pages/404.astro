@@ -1,0 +1,15 @@
+---
+import InnerHero from '@/components/Heros/InnerHero.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import image from '../assets/images/portfolio.webp';
+---
+
+<BaseLayout>
+  <InnerHero
+    title='404'
+    subTitle='Page not found'
+    ghostTitle='e-blueprint'
+    image={image}
+    alt='22 jamaica street, liverpool'
+  />
+</BaseLayout>
