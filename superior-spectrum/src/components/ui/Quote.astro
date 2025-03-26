@@ -1,0 +1,14 @@
+---
+const { author } = Astro.props;
+---
+
+<blockquote class='open-quote'>
+  <slot />
+  <footer>{author}</footer>
+</blockquote>
+
+<style>
+  blockquote.open-quote::before {
+    margin-inline-start: -0.5rem;
+  }
+</style>

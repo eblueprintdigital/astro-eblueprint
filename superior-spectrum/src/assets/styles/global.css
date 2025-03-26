@@ -3,6 +3,10 @@
   --grey: rgb(167, 167, 167);
 }
 
+body {
+  font-size: 1.2rem;
+}
+
 li {
   color: #b9b9b9;
 }

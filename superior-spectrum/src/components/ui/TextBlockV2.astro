@@ -1,0 +1,29 @@
+---
+const { title } = Astro.props;
+---
+
+<div class='tt-section padding-left-sm-3-p padding-right-sm-3-p'>
+  <div class='tt-section-inner tt-wrap'>
+    <div class='tt-row'>
+      <div class='tt-col-lg-8'>
+        <div class='tt-heading tt-heading-xsm anim-fadeinup'>
+          <h2 class='tt-heading-title'>
+            {title}
+          </h2>
+          <!-- <h3 class="tt-heading-subtitle text-gray">Subtitle</h3> -->
+        </div>
+        <!-- End tt-Heading -->
+
+        <div class='anim-fadeinup text-gray'>
+          <slot />
+        </div>
+      </div>
+      <!-- /.tt-col -->
+
+      <div class='tt-col-lg-4'> </div>
+      <!-- /.tt-col -->
+    </div>
+    <!-- /.tt-row -->
+  </div>
+  <!-- /.tt-section-inner -->
+</div>

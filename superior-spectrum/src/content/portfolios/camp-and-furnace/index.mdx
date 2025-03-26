@@ -1,0 +1,77 @@
+---
+title: 'Camp and Furnace'
+year: '2020'
+role: 'Web Development'
+website: 'https://campandfurnace.com/'
+featuredImage: ./images/camp-furnace--featured.webp
+---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+
+import parallaxImage from './images/cf-parallax.webp';
+import sliderImage from './images/cf--slider.jpg.webp';
+import timelineImage from './images/cf--timeline.webp';
+import eventsImage from './images/cf--events.webp';
+import formImage from './images/cf--form.webp';
+
+export const images = [sliderImage, timelineImage, eventsImage, formImage];
+
+<TextBlock title='The good times are back'>
+  Camp & Furnace approached us to help build them a website that allowed them to
+  present their events effortlessly across all platforms.
+
+The key to a beautiful and visual frontend was an equally impressive
+administration through the website's back-end. This was fully customised to put
+administration personnel in full control in order to develop and adapt events on
+the fly.
+
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+
+<TextBlockV2 title='A dynamic backend'>
+  A fully tailored back-end system that is personalised for Camp designers and
+  marketing team. It gives full control to the customer with bespoke slideshow
+  options, custom events pages, bespoke blog pages and a function for setting
+  time sensitive page releases.
+</TextBlockV2>
+
+<TextBlock title='Bespoke and intuitive forms'>
+  With five rooms and a wealth of events, Camp and Furnace required more than
+  one or two standard forms. Through a strategic approach, we ensured that each
+  event was tailored to specific rooms, and ensured that these forms went to the
+  right person and manager.
+</TextBlock>
+
+<TextBlockV2 title='Build trust in time'>
+  We built a comprehensive timeline that features breakout moments in Camp and
+  Furnaces history.
+</TextBlockV2>
+
+<TextBlock title='Sliders redefined'>
+  A bespoke slider was crucial for Camp and Furnace to illustrate the various
+  nights and themes. Not only did we make this possible, but we ensured that it
+  worked efficiently.
+</TextBlock>
+
+<DraggableSlider images={images} />
+
+<TextBlockV2 title='A custom administration'>
+  We enabled Camp and Furnace to have full control over all aspects of their
+  website.
+</TextBlockV2>
+
+<TextBlock title='Events made easy'>
+  A flexible and easy-to-use system to manage events, mark featured events, and
+  support a fast moving business with the ability to represent and feature
+  separate events that could happen simultaneously across the five distinct
+  rooms within Camp and Furnace.
+</TextBlock>
+
+<TextBlockV2 title='Easy Navigation and custom areas'>
+  Each key section of the website is divided into its own area, keeping
+  navigation and administration easy and quick to use.
+</TextBlockV2>

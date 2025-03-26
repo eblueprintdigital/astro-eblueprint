@@ -1,0 +1,39 @@
+---
+title: 'Apex Management Solutions'
+year: '2022'
+role: 'Website'
+website: 'https://apexltd.org.uk/'
+featuredImage: ./images/apex--featured.webp
+---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+
+import parallaxImage from './images/apex--featured.webp';
+import homeImage from './images/apex-website--home.webp';
+import appImage from './images/apex-website--app.webp';
+import accessibilityImage from './images/apex-website--accessibility.webp';
+import editorImage from './images/apex-website--editor.webp';
+
+export const images = [homeImage, appImage, accessibilityImage, editorImage];
+
+<TextBlock title='Assisted, secure and accessible transport solutions'>
+  Apex Management Solutions approached us to create a responsive 'accessible for
+  all' website to raise awareness of their safe, reliable and efficient services
+  for a wide variety of customers, ranging from sectors such as education,
+  medical, hospitality, and security.
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+<TextBlockV2 title="A UI and UX that's accessible for all">
+  We brought together a website that functioned for a range of users, such as
+  drivers, guardians, care organisations, and people with disabilities. One of
+  the key requirements for Apex was to make the website adaptable for all of
+  their many clients, such as catering for visual impairments. So, website
+  accessibility was essential and demonstrated the attitude and dedication that
+  Apex brought to their service delivery.
+</TextBlockV2>
+
+<DraggableSlider images={images} />

@@ -13,7 +13,7 @@ const { subTitle, title, ghostTitle, image, alt } = Astro.props;
     <div class='ph-image'>
       <div class='ph-image-inner'>
         <!-- <img src='assets/img/page-header/ph-4.jpg' alt='Image' /> -->
-        <Image src={image} format='avif' alt={alt} />
+        <Image src={image} format='avif' alt={alt} loading='eager' />
       </div>
     </div>
 

@@ -10,11 +10,23 @@ import '../assets/styles/global.css';
 import '@fontsource/merriweather';
 // Supports weights 300-800
 import '@fontsource-variable/merriweather-sans';
+
+// Get the current page name from the URL
+const currentPath = Astro.url.pathname;
+const pageName =
+  currentPath === '/'
+    ? 'Home'
+    : currentPath.split('/').filter(Boolean).pop()?.replace(/-/g, ' ');
+const pageTitle = pageName
+  ? `${pageName.charAt(0).toUpperCase() + pageName.slice(1)} | e-blueprint digital`
+  : 'e-blueprint digital';
+
+const { title = pageTitle, description, image, canonicalURL } = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
-  <BaseHead />
+  <BaseHead {title} {description} {image} {canonicalURL} />
   <body
     id='body'
     class='tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor'

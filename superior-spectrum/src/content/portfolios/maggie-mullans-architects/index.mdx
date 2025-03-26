@@ -1,0 +1,50 @@
+---
+title: 'Maggie Mullan Architects | MMA'
+year: '2021'
+role: 'Web Development, Branding'
+website: 'https://mma.design/'
+featuredImage: ./images/maggie--featured.webp
+images:
+---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+import Quote from '@/components/ui/Quote.astro';
+
+{/* images */}
+import parallaxImage from './images/maggie--parallax.webp';
+import letterheadsImage from './images/maggie--letterheads.webp';
+import cards1Image from './images/maggie--cards-1.webp';
+import cards2Image from './images/business--cards-2.webp';
+import cards3Image from './images/business--cards-3..webp';
+
+export const images = [letterheadsImage, cards1Image, cards2Image, cards3Image];
+
+<TextBlock title='Grand designs redefined'>
+  Maggie Mullan Architects required a website to show the scale and importance
+  of the work they do. Having worked with Maggie for many years, it was a
+  project of great significance for us. We wanted to truly reflect the
+  competence and capability within her practice.
+  <br />
+  We worked through many sessions with MMA to find a narrative that best
+  represents the ethos and approach to how MMA develops and delivers their
+  projects. It was important to create branding that clearly showed the depth
+  and importance of what they deliver for clients and the wider community.
+  <br />
+  We delivered a site that showcases the next generation of MMA’s nationally
+  important projects that have come to fruition.
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+<TextBlockV2 title='The anatomy of the MMA brand'>
+  A true brand identity has been developed and executed through a beautifully
+  crafted logo. As a spearhead for the business, it creates an impression that
+  has helped define MMA’s merits whilst building trust amongst MMA’s peers. The
+  value MMA brings to a project comes through in all aspects of their branding,
+  including the copy and photography, to present one cohesive offering that
+  works online as it does in practice.
+</TextBlockV2>
+
+<DraggableSlider images={images} />

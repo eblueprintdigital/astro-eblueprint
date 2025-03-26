@@ -1,0 +1,70 @@
+---
+title: 'teratherm'
+year: '2024'
+role: 'Brand communications & digital'
+website: 'https://teratherm-energy.com/'
+featuredImage: ./images/teratherm--featured.jpg
+---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+import Quote from '@/components/ui/Quote.astro';
+{
+  /* images */
+}
+import parallaxImage from './images/tera--parallax.webp';
+import desktopImage from './images/tera--desktop.webp';
+import liveryImage from './images/tera--livery.webp';
+import adBoardsImage from './images/tera--ad-boards.webp';
+import businessCardsImage from './images/tera--business-cards.webp';
+import flyersImage from './images/tera--flyers.webp';
+
+export const images = [
+  desktopImage,
+  liveryImage,
+  adBoardsImage,
+  businessCardsImage,
+  flyersImage,
+];
+
+<TextBlock title='Bringing a new Geothermal energy product to market'>
+  Teratherm is one of those exciting products that can be difficult to
+  understand, but once you do, the eureka moment opens the floodgates to a range
+  of possibilities. e-blueprint helped distil Teratherm’s power through branding
+  and communications, showcasing how it harnesses geothermal energy.
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+<TextBlockV2 title='Exhibition – Marketing materials'>
+  With a last minute space secured at the Grand Designs Exhibition, we created
+  the teratherm’s 3m x 3m exhibition stand featuring double corners, reception
+  desks, along with flyers, folders, business cards, T-shirts, and a digital
+  landing page for lead generation after the event.
+</TextBlockV2>
+
+<DraggableSlider images={images} />
+
+<TextBlock title='Bringing a new Geothermal energy product to market'>
+  We developed the website to provide an effortlessly simple browsing experience
+  that enables customers to navigate, explore, and understand the benefits of
+  geothermal energy easily. The website is optimised and constructed with
+  WordPress blocks for superfast loading and optimised for search engines.
+  <br />
+  With complete control through a customised, user-friendly content management
+  system (CMS) website, they can promote new products, special offers, and
+  discounts. A straightforward sign-up feature assists in building their
+  customer database.
+</TextBlock>
+
+<Quote author='Liam Smith, Managing Director.'>
+  We were impressed at how quickly e-blueprint understood how we wanted to
+  present the company. Their guidance and support during a change and the need
+  to show the business as an established brand were a big part of this exercise.
+  The detail and thought that went into understanding our product translated
+  beautifully to help customers understand a complex and technical product,
+  which helped when we were at Grand Designs. We also greatly appreciated the
+  extra out-of-hours work and effort they put into getting the website and
+  everything we needed for the exhibition.
+</Quote>

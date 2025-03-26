@@ -1,5 +1,10 @@
 ---
 import Socials from '@/components/AllPages/Socials.astro';
+
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
+
+// 6Lcsx_8qAAAAABuNl4xYL4Ru0ZSK1w7e-Yc5Dkbj
+// 6Lcsx_8qAAAAAJw6c1sPn5i4G-zWhcv2EX5C_ixe
 ---
 
 <div class='tt-section'>
@@ -114,27 +119,31 @@ import Socials from '@/components/AllPages/Socials.astro';
 </div>
 <!-- End tt-section -->
 
-<style>
-  form > p {
-    color: #fff;
-  }
-</style>
+<script
+  is:inline
+  src={`https://www.google.com/recaptcha/api.js?render=${import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}`}
+></script>
 
 <script is:inline>
-  // Key change: is:inline or place script at the end of the <body>
-
   const form = document.getElementById('tt-contact-form');
   const responseMessage = document.getElementById('form-response');
+  const siteKey = '6Lcsx_8qAAAAABuNl4xYL4Ru0ZSK1w7e-Yc5Dkbj';
 
   form.addEventListener('submit', async (e) => {
-    console.log('Form submit event triggered!'); // Add this line
-
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
     try {
+      // Execute reCAPTCHA with action
+      const recaptchaResponse = await grecaptcha.execute(siteKey, {
+        action: 'submit',
+      });
+
+      const formData = new FormData(form);
+      const data = {
+        ...Object.fromEntries(formData.entries()),
+        recaptchaResponse,
+      };
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -148,17 +157,22 @@ import Socials from '@/components/AllPages/Socials.astro';
         responseMessage.style.color = 'white';
         form.reset();
       } else {
-        // More robust error handling:
         const errorMessage =
           result.error || result.message || 'Something went wrong';
         responseMessage.textContent = `Error: ${errorMessage}`;
         responseMessage.style.color = 'white';
-        console.error('API Error:', result); // Log the full error for debugging
+        console.error('API Error:', result);
       }
     } catch (error) {
       responseMessage.textContent = `Failed to send message. ${error.message}`;
       responseMessage.style.color = 'white';
-      console.error('Fetch Error:', error); // Log the full error for debugging
+      console.error('Fetch Error:', error);
     }
   });
 </script>
+
+<style>
+  form > p {
+    color: #fff;
+  }
+</style>

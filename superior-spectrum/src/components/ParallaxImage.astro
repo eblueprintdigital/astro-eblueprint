@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+const { image } = Astro.props;
+---
+
+<div class='tt-section'>
+  <div class='tt-section-inner'>
+    <div class='tt-image tti-fixed-height'>
+      <figure>
+        <Image
+          src={image}
+          format='avif'
+          class='anim-image-parallax'
+          alt='test alt'
+        />
+        <!-- <figcaption> Image Caption </figcaption> -->
+      </figure>
+    </div>
+    <!-- End tt-image -->
+  </div>
+  <!-- /.tt-section-inner -->
+</div>

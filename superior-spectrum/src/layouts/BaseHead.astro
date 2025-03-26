@@ -1,45 +1,63 @@
 ---
 import Styles from '@/components/vendor/Styles.astro';
+import { SEO } from 'astro-seo';
+
+const {
+  title = 'e-blueprint digital',
+  description = 'e-blueprint digital - Web Development, Brand Communications & Digital Marketing Agency in Liverpool',
+  image = '/ebp--seo.png', // Add a default social image
+  canonicalURL = new URL(
+    Astro.url.pathname,
+    Astro.site || 'https://e-blueprint.co.uk'
+  ).toString(),
+} = Astro.props;
 ---
 
 <head>
-  <!-- Title -->
-  <title
-    >Tank - Creative Portfolio Showcase HTML Website Template by Themetorium</title
-  >
-
-  <!-- Meta -->
-  <meta charset='utf-8' />
-  <meta
-    name='description'
-    content='Download Tank - Creative Portfolio Showcase HTML Website Template that comes with rich features and well-commented code. Made by Themetorium.'
+  <SEO
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title,
+        type: 'website',
+        image,
+      },
+      image: {
+        alt: 'e-blueprint digital website screenshot',
+      },
+    }}
+    twitter={{
+      creator: '@eblueprint',
+      card: 'summary_large_image',
+    }}
+    extend={{
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        },
+        { name: 'apple-mobile-web-app-title', content: title },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/fav/favicon-96x96.png',
+          sizes: '96x96',
+        },
+        { rel: 'icon', type: 'image/svg+xml', href: '/fav/favicon.svg' },
+        { rel: 'shortcut icon', href: '/fav/favicon.ico' },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/fav/apple-touch-icon.png',
+        },
+        { rel: 'manifest', href: '/fav/site.webmanifest' },
+        { rel: 'canonical', href: canonicalURL },
+      ],
+    }}
   />
-  <meta name='author' content='themetorium.net' />
-
-  <!-- Mobile Meta -->
-  <meta
-    name='viewport'
-    content='width=device-width, initial-scale=1, shrink-to-fit=no'
-  />
-
-  <!-- fav -->
-  <link
-    rel='icon'
-    type='image/png'
-    href='/fav/favicon-96x96.png'
-    sizes='96x96'
-  />
-  <link rel='icon' type='image/svg+xml' href='/fav/favicon.svg' />
-  <link rel='shortcut icon' href='/fav/favicon.ico' />
-  <link
-    rel='apple-touch-icon'
-    sizes='180x180'
-    href='/fav/apple-touch-icon.png'
-  />
-  <meta name='apple-mobile-web-app-title' content='MyWebSite' />
-  <link rel='manifest' href='/fav/site.webmanifest' />
-
-  <!-- Your Google Analytics code goes here! -->
 
   <Styles />
 </head>

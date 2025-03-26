@@ -1,0 +1,73 @@
+---
+title: 'Pangea Sculptures'
+year: '2019'
+role: 'Web Development, Branding'
+website: 'https://pangeasculptures.com/'
+featuredImage: ./images/pangea--featured.webp
+images:
+---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+import Quote from '@/components/ui/Quote.astro';
+
+{/* images */}
+import parallaxImage from './images/pangea--parallax.webp';
+import websiteImage from './images/pangea--website-ecom.webp';
+import bookletImage from './images/pangea--booklet.webp';
+import flyersImage from './images/pangea--flyers.jpg.webp';
+import xmasAdImage from './images/pangea--xmas-ad.webp';
+
+export const images = [websiteImage, bookletImage, flyersImage, xmasAdImage];
+
+<TextBlock title='Bringing the majesty of Africa into your home…'>
+  Deriving their name from the ancient supercontinent, Pangea Sculptures have
+  brought the roaming, roaring wildlife of Africa into homes, gardens and
+  businesses across the UK and Europe through beautifully crafted sculptures.
+  <br />
+  Their admiration of wildlife has gone from strength-to-strength, with Pangea
+  also raising awareness and funds for several charities, including Born Free
+  and the Purple Poppy Appeal.
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+<TextBlockV2 title='Covering all the bases'>
+  We assisted Pangea by developing an easy-to-use e-commerce and checkout system
+  with an integrated payment gateway. The website acted as the hub for all their
+  marketing activity, which included email marketing with incentives to build
+  social and email contacts. We implemented quarterly marketing campaigns to
+  drive sales and promotions during key periods throughout the year. On a
+  monthly basis, we optimised all aspects of search engines, paid searches and
+  social content to create routine reports and inform the next month’s marketing
+  effort.
+</TextBlockV2>
+
+<DraggableSlider images={images} />
+
+<TextBlock title='Mobile and PWAs'>
+  Building the website mobile first ensured all aspects functioned properly
+  online alongside e-commerce. Using Powerful Web App (PWA) technology,
+  customers received the opportunity to add the website as an app icon to their
+  phone, ensuring ease of use and a faster mobile experience.
+</TextBlock>
+
+<Quote author='Bev Howard, General Manager'>
+  Pangea Sculptures has been working with Nick Taylor and the team at
+  e-blueprint for the past four years. During this time, we have built an
+  excellent working relationship with the team.
+  <br />
+  Initially, Nick and the team began helping us with a website design four years
+  ago and from then e-blueprint has continued to support our business across all
+  our e-commerce and marketing platforms. e-blueprint have always been
+  responsive to our requests, and willing to share ideas and techniques to
+  enhance our business model.
+  <br />
+  Nick is a very professional individual; a dedicated account manager who is
+  forward thinking and focused on our goals; communication has always been
+  excellent. The team, here and at e-blueprint, work well together and I would
+  not hesitate to recommend their services to any business wanting a consistent,
+  professional approach to web development, e-commerce integration, design and
+  marketing.
+</Quote>

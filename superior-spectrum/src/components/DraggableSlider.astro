@@ -1,5 +1,5 @@
 ---
-import Image from 'astro/components/Image.astro';
+import { Image } from 'astro:assets';
 
 const { images } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const { images } = Astro.props;
                     <Image
                       class='tt-cc-image anim-image-parallax'
                       src={image}
-                      alt='Image'
+                      alt='Portfolio image'
                       loading='lazy'
                     />
                   </figure>

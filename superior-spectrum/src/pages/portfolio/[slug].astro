@@ -1,0 +1,67 @@
+---
+// layouts
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseHead from '@/layouts/BaseHead.astro';
+
+// components
+import HeroProject from '@/components/Heros/HeroProject.astro';
+import InnerHeroV2 from '@/components/Heros/InnerHeroV2.astro';
+import PostNavigation from '@/components/ui/PostNavigation.astro';
+
+// tools
+import { getCollection, render } from 'astro:content';
+import SocialShare from '@/components/ui/SocialShare.astro';
+
+export const getStaticPaths = async () => {
+  const allPortfolios = await getCollection('portfolio');
+  return allPortfolios.map((portfolio, index) => ({
+    params: { slug: portfolio.id },
+    props: { portfolio, index, allPortfolios },
+  }));
+};
+
+const { portfolio, index, allPortfolios } = Astro.props;
+const { title, year, role, website, featuredImage } = portfolio.data;
+
+// console.log(featuredImage, title);
+
+const { Content } = await render(portfolio);
+
+const previousPost = index > 0 ? allPortfolios[index - 1] : null;
+const nextPost =
+  index < allPortfolios.length - 1 ? allPortfolios[index + 1] : null;
+
+// Create SEO description
+const seoDescription = `${title} - ${role} project by e-blueprint digital. Year: ${year}`;
+---
+
+<BaseLayout>
+  <BaseHead
+    title={`${title} | e-blueprint digital`}
+    description={seoDescription}
+    image={featuredImage.src}
+  />
+  <HeroProject
+    title={title}
+    year={year}
+    role={role}
+    website={website}
+    featuredImage={featuredImage}
+  />
+  <div id='page-content'>
+    <Content />
+    <div class='tt-section'>
+      <div class='tt-section-inner tt-wrap max-width-900'>
+        <article class='tt-blog-post lightgallery'>
+          <div class='tt-blog-post-content'> </div>
+          <SocialShare />
+        </article>
+        <PostNavigation
+          previousPost={previousPost}
+          nextPost={nextPost}
+          baseUrl='/portfolio'
+        />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

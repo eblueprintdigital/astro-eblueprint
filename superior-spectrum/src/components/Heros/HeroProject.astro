@@ -1,46 +1,83 @@
 ---
-import Image from 'astro/components/Image.astro';
+import { Image } from 'astro:assets';
+// import headerImage from '@/assets/images/jamaica-st-22c.webp';
 
-const { title, image } = Astro.props;
-// console.log(service);
-// const { title } = service.data;
-// const { image } = service.data.image;
+const { title, year, role, website, featuredImage } = Astro.props;
 ---
 
 <div
   id='page-header'
-  class='ph-full ph-cap-sm ph-center ph-bg-image ph-image-shadow ph-image-cover-6 ph-content-parallax'
+  class='ph-full ph-inline ph-bg-image ph-image-shadow ph-image-cover-5 ph-content-parallax'
 >
-  <div class='page-header-inner tt-wrap max-width-1400'>
+  <div class='page-header-inner tt-wrap'>
     <!-- Begin page header image 
 							============================= -->
     <div class='ph-image'>
       <div class='ph-image-inner'>
-        <Image src={image} alt='hyg' loading='eager' />
-        <!-- <img src={image} alt='Image' /> -->
+        <!-- <img
+          src='assets/img/page-header/project-ph/project-ph-2.jpg'
+          alt='Image'
+        /> -->
+        <Image
+          src={featuredImage}
+          format='avif'
+          alt='test alt'
+          loading='eager'
+        />
       </div>
     </div>
     <!-- End page header image -->
-
-    <!-- Begin page header caption
-							=============================== 
-							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
-							-->
     <div class='ph-caption'>
       <div class='ph-categories ph-appear'>
-        <!-- <a href='blog-archive.html' class='ph-category'>Lifestyle</a> -->
-        <!-- <a href="blog-archive.html" class="ph-category">Uncategorized</a> -->
+        <div class='ph-category' style=''>Creative</div>
+        <!-- <div class="ph-category">Varia</div> -->
       </div>
       <!-- /.ph-categories -->
 
-      <h2 class='ph-caption-title ph-appear'>
-        {title}
-      </h2>
+      <h2 class='ph-caption-title ph-appear'>{title}</h2>
+      <!-- You can use <br class="hide-from-lg"> to break a text line if needed -->
     </div>
     <!-- End page header caption -->
+
+    <!-- Begin project info list
+							============================= 
+							* You can use the project info list as a standalone element outside of the page header if you want.
+							* Class "ph-appear" is for page header only!
+							-->
+    <div class='project-info-list'>
+      <ul>
+        <li>
+          <div class='pi-list-heading'>Client</div>
+          <div class='pi-list-cont'>{title}</div>
+        </li>
+        <li>
+          <div class='pi-list-heading'>Year</div>
+          <div class='pi-list-cont'>{year}</div>
+        </li>
+        <li>
+          <div class='pi-list-heading'>Role</div>
+          <div class='pi-list-cont'>{role}</div>
+          <!-- Describe in a few words -->
+        </li>
+        <li>
+          <div class='pi-list-heading'>Website</div>
+          <div class='pi-list-cont'>
+            <a href={website} target='_blank' rel='noopener'>
+              Visit site
+              <span class='pi-list-icon'>
+                <i class='fas fa-arrow-right'></i>
+              </span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- End project info list -->
   </div>
   <!-- /.page-header-inner -->
 
+  <!-- Begin scroll down circle (you can change "data-offset" to set scroll top offset) 
+						============================== -->
   <a href='#page-content' class='scroll-down-circle' data-offset='30'>
     <div class='sdc-inner ph-appear'>
       <div class='sdc-icon'><i class='fas fa-chevron-down'></i></div>
@@ -88,7 +125,7 @@ const { title, image } = Astro.props;
       <div class='ph-share-inner'>
         <h1 class='ph-share-title ph-share-appear'>Spread the Word!</h1>
         <div class='ph-share-subtitle ph-share-appear'
-          >Share this article with your friends</div
+          >Share this project with your friends</div
         >
 
         <div class='social-buttons ph-share-appear'>
@@ -121,3 +158,13 @@ const { title, image } = Astro.props;
   <!-- End page header share -->
 </div>
 <!-- End page header -->
+
+<style>
+  .project-info-list li {
+    color: #fff;
+  }
+
+  .ph-image-cover-5 .ph-image-inner::before {
+    opacity: 0.6;
+  }
+</style>

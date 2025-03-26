@@ -26,7 +26,7 @@ const portfolio = defineCollection({
       role: z.string(),
       website: z.string(),
       featuredImage: image(),
-      // images: // images for slider
+      //images: z.array(image()).optional(),
     }),
 });
 

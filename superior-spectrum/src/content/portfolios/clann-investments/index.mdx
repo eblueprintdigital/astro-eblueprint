@@ -3,5 +3,39 @@ title: 'Clann Investments'
 year: '2025'
 role: 'Brand development & brand Communications'
 website: 'https://clann-investments.co.uk/'
-featuredImage: ./images/clann-investments--featured.jpg
+featuredImage: ./images/clann--featured.jpg
 ---
+
+import TextBlock from '@/components/ui/TextBlock.astro';
+import TextBlockV2 from '@/components/ui/TextBlockV2.astro';
+import ParallaxImage from '@/components/ParallaxImage.astro';
+import DraggableSlider from '@/components/DraggableSlider.astro';
+
+import parallaxImage from './images/clann--mountains.webp';
+import businessCards from './images/clann--business-cards.webp';
+import desktopWebsite from './images/clann--desktop-website.webp';
+import letterHeads from './images/clann--letterheads.webp';
+import socialPosts from './images/clann--social-posts.webp';
+
+export const images = [
+  parallaxImage,
+  businessCards,
+  desktopWebsite,
+  letterHeads,
+  socialPosts,
+];
+
+<TextBlock title='The back drop'>
+ Clann Investments was created to better represent their new portfolio of financial services. e-blueprint were engaged to develop GETS branding and we delighted to be asked to create this new exciting brand. Clann was borne from the Scottish roots Director's Taryn and Scott share and create to embody the trust, transparency and warmth of personality Clann Investments bring to their customers. The branding felt right from the beginning and talks to the traditions of the highlands and secure investments.
+
+Clann have engaged e-blueprint to build a social media and website strategy and deliver a digital marketing campaign.
+
+</TextBlock>
+
+<ParallaxImage image={parallaxImage} />
+<TextBlockV2 title='A wealth of experience'>
+  We chose pulp paper and thicker conqueror paper for correspondence to add a
+  feel of depth and experience. A cornerstone of the Clann Investment brand.
+</TextBlockV2>
+
+<DraggableSlider images={images} />

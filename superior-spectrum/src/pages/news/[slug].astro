@@ -5,6 +5,7 @@ import { getCollection, render } from 'astro:content';
 
 // components
 import InnerHeroV2 from '@/components/Heros/InnerHeroV2.astro';
+import PostNavigation from '@/components/ui/PostNavigation.astro';
 
 // layouts
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -43,41 +44,11 @@ const nextPost = index < allBlogs.length - 1 ? allBlogs[index + 1] : null;
       </article>
 
       <!-- next/previous page nav -->
-      <div class='tt-blog-post-nav'>
-        {
-          previousPost && (
-            <div class='tt-bp-nav-col tt-bp-nav-left'>
-              <div class='tt-bp-nav-text'>
-                <span>
-                  <i class='fas fa-angle-left' />
-                </span>{' '}
-                Previous Post
-              </div>
-              <h4 class='tt-bp-nav-title'>
-                <a href={`/news/${previousPost.id}`}>
-                  {previousPost.data.title}
-                </a>
-              </h4>
-            </div>
-          )
-        }
-
-        {
-          nextPost && (
-            <div class='tt-bp-nav-col tt-bp-nav-right'>
-              <div class='tt-bp-nav-text'>
-                Next Post
-                <span>
-                  <i class='fas fa-angle-right' />
-                </span>
-              </div>
-              <h4 class='tt-bp-nav-title'>
-                <a href={`/news/${nextPost.id}`}>{nextPost.data.title}</a>
-              </h4>
-            </div>
-          )
-        }
-      </div>
+      <PostNavigation
+        previousPost={previousPost}
+        nextPost={nextPost}
+        baseUrl='/news'
+      />
     </div>
   </div>
 </BaseLayout>
